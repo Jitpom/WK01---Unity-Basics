@@ -39,11 +39,12 @@ public class CubeController : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            rb.AddForce(transform.right, ForceMode.Impulse);
+            transform.Rotate(Vector3.up * Time.deltaTime, Space.World);
+
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            rb.AddForce(-transform.right, ForceMode.Impulse);
+            transform.Rotate(-Vector3.up * Time.deltaTime, Space.World);
         }
 
         
