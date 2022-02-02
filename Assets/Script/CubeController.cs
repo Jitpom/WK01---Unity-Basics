@@ -47,8 +47,22 @@ public class CubeController : MonoBehaviour
         {
             transform.Rotate(-Vector3.up * Time.deltaTime * rotation_speed, Space.World);
         }
+    }
 
-        
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Tree"))
+        {
+            Debug.Log("Oops, hits the tree");
+        }
+        else if (collision.gameObject.CompareTag("Rock"))
+        {
+            Debug.Log("Ouch! this is a rock");
+        }
+        else if (collision.gameObject.CompareTag("Bench"))
+        {
+            Debug.Log("Oh, I want to sit here!");
+        }
     }
 
 
