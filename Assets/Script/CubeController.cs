@@ -5,6 +5,7 @@ using UnityEngine;
 public class CubeController : MonoBehaviour
 {
     public string player_name;
+    public int rotation_speed;
 
     private int speed;
     private Rigidbody rb;
@@ -39,12 +40,12 @@ public class CubeController : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Rotate(Vector3.up * Time.deltaTime, Space.World);
+            transform.Rotate(Vector3.up * Time.deltaTime * rotation_speed, Space.World);
 
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Rotate(-Vector3.up * Time.deltaTime, Space.World);
+            transform.Rotate(-Vector3.up * Time.deltaTime * rotation_speed, Space.World);
         }
 
         
